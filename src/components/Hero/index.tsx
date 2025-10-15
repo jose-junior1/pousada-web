@@ -3,7 +3,6 @@ import banner from '../../assets/img/img-fundo.jpg'
 import * as S from './styles'
 
 const Hero = () => {
-    console.log(banner)
     return (
         <S.Hero style={{ backgroundImage: `url(${banner})` }}>
             <S.BoxText>

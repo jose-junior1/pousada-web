@@ -4,48 +4,53 @@ import { Link as LinkRoute, useLocation } from 'react-router-dom'
 
 import * as S from './styles'
 
-const Header = () => {
+const Header = ({ isOpen, closeMenu }: Props) => {
     const location = useLocation()
 
     const isRooms = location.pathname === '/rooms'
 
     return (
-        <S.Header className={isRooms ? 'rooms-page' : ''}>
-            <LinkRoute className='link-home' to="/">
-                Pousada <span>Secreta</span>
-            </LinkRoute>
-            {!isRooms && (
-                <nav>
-                    <S.NavLinks>
-                        <li>
-                            <Link
-                                to='about'
-                                smooth={true}
-                                duration={500}
-                            >
-                                Sobre
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                to='route'
-                                smooth={true}
-                                duration={500}
-                            >
-                                Rotas
-                            </Link>
-                        </li>
-                        <li>
-                            <LinkRoute
-                                to='/rooms'
-                            >
-                                Quartos
-                            </LinkRoute>
-                        </li>
-                    </S.NavLinks>
-                </nav>
-            )}
-        </S.Header>
+        <>
+            <S.Header className={isOpen ? 'is-active' : ''} id={isRooms ? 'rooms-page' : ''}>
+                <LinkRoute onClick={closeMenu} className='link-home' to="/">
+                    Pousada <span>Secreta</span>
+                </LinkRoute>
+                {!isRooms && (
+                    <nav>
+                        <S.NavLinks>
+                            <li>
+                                <Link
+                                    to='about'
+                                    smooth={true}
+                                    duration={500}
+                                    onClick={closeMenu}
+                                >
+                                    Sobre
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    to='route'
+                                    smooth={true}
+                                    duration={500}
+                                    onClick={closeMenu}
+                                >
+                                    Rotas
+                                </Link>
+                            </li>
+                            <li>
+                                <LinkRoute
+                                    to='/rooms'
+                                    onClick={closeMenu}
+                                >
+                                    Quartos
+                                </LinkRoute>
+                            </li>
+                        </S.NavLinks>
+                    </nav>
+                )}
+            </S.Header>
+        </>
     )
 }
 

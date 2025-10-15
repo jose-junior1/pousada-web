@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { breakpoints } from "../../styles/responsive";
 
 export const Section = styled.section`
     display: flex;
@@ -17,6 +18,10 @@ export const Section = styled.section`
     p {
         margin-bottom: 60px;
     }
+
+    ${breakpoints.mobile`
+        padding: 100px 16px;
+    `}
 `
 
 export const BoxImage = styled.div`
@@ -29,7 +34,12 @@ export const BoxImage = styled.div`
         max-width: 400px;
         width: 100%;
         height: 260px;
+        object-fit: cover;
     }
+
+    ${breakpoints.mobile`
+        grid-template-columns: 1fr;
+    `}
 `
 
 export const BoxText = styled.article`
@@ -38,17 +48,6 @@ export const BoxText = styled.article`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    /* ul {
-        width: 100%;
-        list-style: disc;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        justify-content: space-between;
-        column-gap: 30px;
-        row-gap: 20px;
-        text-align: left;
-    } */
 
     ul {
         display: flex;
@@ -67,4 +66,19 @@ export const BoxText = styled.article`
         font-size: 24px;
         padding-bottom: 30px;
     }
+
+    ${breakpoints.mobile`
+        width: 100%;
+
+        ul {
+            max-width: 100%;
+            width: 100%;
+            flex-direction: column;
+
+            li {
+                margin-left: 20px;
+                width: 100%;
+            }
+        }
+    `}
 `

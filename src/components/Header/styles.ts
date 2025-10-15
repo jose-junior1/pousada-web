@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { breakpoints } from "../../styles/responsive";
 
 export const Header = styled.header`
     position: fixed;
@@ -21,9 +22,41 @@ export const Header = styled.header`
         color: #2876beff;
     }
 
-    &.rooms-page {
-        justify-content: center;
+    
+
+    .is-active {
+        opacity: 1;
+        pointer-events: all;
     }
+
+
+    ${breakpoints.mobile`
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+        width: 100%;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-100%);
+        transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+        background-color: rgba(0, 0, 0, 0.8);
+        height: auto;
+        padding: 16px 0;
+
+        .link-home {
+            color: #fff;
+        }
+
+        span {
+            color: #71b7f8ff;
+        } 
+
+        &.is-active {
+            opacity: 1;
+            pointer-events: all;
+            transform: translateY(0);
+        }
+    `}
 `
 
 export const NavLinks = styled.ul`
@@ -47,4 +80,16 @@ export const NavLinks = styled.ul`
             text-decoration: none;
         }
     }
+
+    ${breakpoints.mobile`
+        flex-direction: column;
+        gap: 30px;
+        margin-top: 30px;
+
+        li {
+            a {
+                color: #fff;
+            }
+        }
+    `}
 `

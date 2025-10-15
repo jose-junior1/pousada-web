@@ -1,5 +1,6 @@
 import { HashLink } from "react-router-hash-link";
 import styled from "styled-components";
+import { breakpoints } from "../../styles/responsive";
 
 export const Section = styled.section`
     width: 100%;
@@ -8,6 +9,10 @@ export const Section = styled.section`
     justify-content: center;
     align-items: center;
     padding: 100px 0;
+
+    ${breakpoints.mobile`
+        padding: 100px 16px;
+    `}
 `
 
 export const ContainerText = styled.div`
@@ -29,6 +34,13 @@ export const ContainerRooms = styled.article`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
+
+    ${breakpoints.mobile`
+        grid-template-columns: 1fr;
+        gap: 60px;
+        max-width: 100%;
+        width: 100%;
+    `}
 `
 
 export const BoxRooms = styled.div`
@@ -41,6 +53,10 @@ export const BoxRooms = styled.div`
         width: 100%;
         margin-bottom: 16px;
     }
+
+    ${breakpoints.mobile`
+        width: 100%;
+    `}
 `
 
 export const LinkItem = styled(HashLink)`
@@ -51,4 +67,9 @@ export const LinkItem = styled(HashLink)`
     &:hover {
         color: #111;
     }
+
+    ${breakpoints.mobile`
+        font-size: 18px;
+        font-weight: bold;
+    `}
 `

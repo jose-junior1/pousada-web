@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { breakpoints } from "../../styles/responsive";
 
 export const Section = styled.div`
     width: 100%;
@@ -17,6 +18,10 @@ export const Section = styled.div`
     .text {
         margin: 40px 0 60px 0;
     }
+    
+    ${breakpoints.mobile`
+        padding: 100px 16px;
+    `}
 `
 
 export const Container = styled.article`
@@ -24,6 +29,11 @@ export const Container = styled.article`
     grid-template-columns: 1fr 1fr;
     justify-content: center;
     gap: 40px;
+    
+    ${breakpoints.mobile`
+        grid-template-columns: 1fr;
+        width: 100%;
+    `}
 `
 
 export const Box = styled.div`
@@ -34,7 +44,6 @@ export const Box = styled.div`
     gap: 10px;
 
     h4 {
-        font-size: 18px;
         margin-bottom: 30px;
     }
 
@@ -42,4 +51,12 @@ export const Box = styled.div`
         width: 200px;
         height: 200px;
     }
+    
+    ${breakpoints.mobile`
+        flex-direction: column;
+
+        img {
+            width: 100%;
+        }
+    `}
 `

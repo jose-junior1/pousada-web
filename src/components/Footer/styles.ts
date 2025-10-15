@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { breakpoints } from "../../styles/responsive";
 
 export const Footer = styled.footer`
     width: 100%;
@@ -26,6 +27,18 @@ export const Footer = styled.footer`
     .copy {
         font-size: 18px;
     }
+
+    ${breakpoints.mobile`
+        padding: 30px 16px;
+
+        div {
+            flex-direction: column;
+
+            h4 {
+                width: 100%;
+            }
+        }
+    `}
 `
 
 export const ListContact = styled.ul`
@@ -47,4 +60,13 @@ export const ListContact = styled.ul`
         gap: 10px;
         font-size: 16px;
     }
+
+    ${breakpoints.mobile`
+        flex-direction: column;
+
+        a, li {
+            width: 100%;
+            font-size: 18px;
+        }
+    `}
 `
