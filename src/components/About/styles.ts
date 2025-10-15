@@ -7,7 +7,7 @@ export const Section = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #d3d3d3ff;
+    background-color: #e9e9e9ff;
 
     h3 {
         font-size: 32px;

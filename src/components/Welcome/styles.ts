@@ -1,3 +1,4 @@
+import { HashLink } from "react-router-hash-link";
 import styled from "styled-components";
 
 export const Section = styled.section`
@@ -33,15 +34,21 @@ export const ContainerRooms = styled.article`
 export const BoxRooms = styled.div`
     width: 100%;
     text-align: center;
+    padding-bottom: 16px;
     border-bottom: 2px solid #04818aff;
 
     img {
         width: 100%;
+        margin-bottom: 16px;
     }
+`
 
-    h4 {
-        margin: 16px 0;
-        text-transform: uppercase;
-        color: #696868ff;
+export const LinkItem = styled(HashLink)`
+    text-transform: uppercase;
+    color: #383838ff;
+    text-decoration: none;
+
+    &:hover {
+        color: #111;
     }
 `

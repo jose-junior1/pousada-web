@@ -1,6 +1,12 @@
+import Banner from "../components/Banner"
+import RoomsList from "../components/RoomsList"
+
 const Rooms = () => {
     return (
-        <div>Rooms</div>
+        <>
+            <Banner />
+            <RoomsList />
+        </>
     )
 }
 

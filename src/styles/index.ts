@@ -7,6 +7,10 @@ const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
         font-family: 'Source Sans Pro', sans-serif;
     }
+
+    h3 {
+        font-weight: 500;
+    }
 `
 
 export default GlobalStyles

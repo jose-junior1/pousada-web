@@ -20,6 +20,10 @@ export const Header = styled.header`
     span {
         color: #2876beff;
     }
+
+    &.rooms-page {
+        justify-content: center;
+    }
 `
 
 export const NavLinks = styled.ul`

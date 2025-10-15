@@ -19,19 +19,19 @@ const Welcome = () => {
             <S.ContainerRooms>
                 <S.BoxRooms>
                     <img src={singleRoom} alt="" />
-                    <h4>Quarto de solteiro</h4>
+                    <S.LinkItem to='/rooms#single'>Quarto de solteiro</S.LinkItem>
                 </S.BoxRooms>
                 <S.BoxRooms>
                     <img src={coupleRoom} alt="" />
-                    <h4>Quarto de casal</h4>
+                    <S.LinkItem to='/rooms#couple'>Quarto de casal</S.LinkItem>
                 </S.BoxRooms>
                 <S.BoxRooms>
                     <img src={familyRoom} alt="" />
-                    <h4>Quarto família</h4>
+                    <S.LinkItem to='/rooms#family'>Quarto família</S.LinkItem>
                 </S.BoxRooms>
             </S.ContainerRooms>
         </S.Section>
     )
 }
 
-export default Welcome
+export default Welcome 
